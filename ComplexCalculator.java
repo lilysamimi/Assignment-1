@@ -1,4 +1,4 @@
-// SI 543 Assignment 2 by Lily Samimi
+// SI 543 Assignment 1 by Lily Samimi
 
 package calc;
 
@@ -19,6 +19,7 @@ public class ComplexCalculator {
 	// subtract d to current number
 	public void subtract(double d){
 		currentNumber = currentNumber - d;
+		// shorthand: currentNumber -= d;
 	}
 	
 	// multiply d to current number
@@ -41,6 +42,14 @@ public class ComplexCalculator {
 		currentNumber = Math.pow(currentNumber, d);
 	}
 	
+	//alternative to power function
+	public void power(double d){
+		double base = currentNumber;
+		for(int i= 0; i < d-1; i++){
+			currentNumber = currentNumber * base;
+		}
+	}
+	
 	public double getCurrentNumber() {
 		return currentNumber;
 	}
@@ -49,7 +58,7 @@ public class ComplexCalculator {
 	// EXTRA FUNCTIONS - not needed for full credit //
 	
 	// isEven()
-	// TODO returns true is current number is even, false otherwise
+	// returns true is current number is even, false otherwise
 	public boolean isEven(){
 		if(currentNumber % 2 == 0){
 			return true;
@@ -57,22 +66,17 @@ public class ComplexCalculator {
 		else return false;
 	}
 	
-	
 	// isPrime()
-	// TODO returns true if current number is a prime number, false otherwise
+	// returns true if current number is a prime number, false otherwise
 	public boolean isPrime(){
-		if (currentNumber % 2 == 0){
-			return false;
-		}
 		
-		for (int i=3; i*i <= currentNumber ;i += 2) {
+		for (int i=2; i < currentNumber ;i++) {
 	        if (currentNumber % i == 0){
 	        	  return false;
 	        }
 	    }
 	    return true;
 	}
-	
 	
 	////////////////////////////////////////////////////
 	

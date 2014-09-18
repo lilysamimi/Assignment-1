@@ -1,4 +1,4 @@
-// SI 543 Assignment 2 by Lily Samimi
+// SI 543 Assignment 1 by Lily Samimi
 
 package calc;
 
